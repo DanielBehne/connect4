@@ -1,11 +1,9 @@
 
-/**
- * Write a description of class connect4 here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class connect4
 {
-    
+    public static void main(String[] args) {
+         board game = new board();
+         game.printBoard();
+    }
+
 }

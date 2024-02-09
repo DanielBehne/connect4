@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=board
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ board\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ board\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=void\ printBoard()
-numComments=2
+comment1.target=board()
+comment2.params=
+comment2.target=void\ makeBoard()
+comment3.params=
+comment3.target=void\ printBoard()
+numComments=4

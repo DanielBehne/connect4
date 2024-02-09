@@ -10,13 +10,27 @@
 
 public class board
 {
-    String[][] boardArray = new String[7][6];
-    public void printBoard() {
-        for (int w = 0; w < 6; w++) {   
-            System.out.print("|");
-            for (int i = 0; i < 7; i++) {
-                System.out.print("___|");
-            }
+    private char[][] boardArray;
 
+    public board() {
+        boardArray = new char[7][6];
+        makeBoard();
+
+    }
+
+    public void makeBoard() {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 6; j++) {
+                boardArray[i][j] = '-';
+            }
         }
     }
+    
+    public void printBoard() {
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 6; j++) {
+                System.out.print(boardArray[i][j]);
+            }
+        }
+    }
+}
