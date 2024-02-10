@@ -1,36 +1,27 @@
-
-/**
- * Write a description of class board here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-
-//6x7 board
-
-public class board
+import java.util.Arrays;
+public class Board
 {
-    private char[][] boardArray;
+    private String[][] boardArray;
 
-    public board() {
-        boardArray = new char[7][6];
+    public Board() {
+        boardArray = new String[6][7];
         makeBoard();
-
     }
 
     public void makeBoard() {
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 6; j++) {
-                boardArray[i][j] = '-';
+        for (int i = 0; i < 6; i++) {
+            for (int j = 0; j < 7; j++) {
+                boardArray[i][j] = "-";
             }
         }
     }
     
     public void printBoard() {
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 6; j++) {
-                System.out.print(boardArray[i][j]);
-            }
+        //for (String[] row : boardArray) {
+          //  System.out.println(row);
+        //}
+        for (int i = 0; i < boardArray.length; i++) {
+            System.out.println(Arrays.toString(boardArray[i]));
         }
     }
 }

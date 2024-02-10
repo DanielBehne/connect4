@@ -1,9 +1,12 @@
 
-public class connect4
+public class Connect4
 {
     public static void main(String[] args) {
-         board game = new board();
-         game.printBoard();
+        Instructions.rules();
+        
+        //Board.makeBoard();
+        //Board.printBoard();
+        
+        EventLoop.runEventLoop();
     }
-
 }
