@@ -17,6 +17,7 @@ public class Instructions
         System.out.println("The columns are numbered from 0 to 6, from left to right.");
         System.out.println("player1 will be colored red and their piece will be shown as " + Players.player1());
         System.out.println("player2 will be colored black and their piece will be shown as " + Players.player2());
+        System.out.println("If you wish to exit the game, enter 100");
         EventLoop.player1Turn = true;
     }
 }
