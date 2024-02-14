@@ -10,6 +10,7 @@ public class Connect4
         //Board.makeBoard();
         //Board.printBoard();
 
-        EventLoop.runEventLoop();
+        //EventLoop.runEventLoop();
+        EventLoop.makeMove();
     }
 }
