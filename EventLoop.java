@@ -5,12 +5,14 @@ public class EventLoop
     static boolean player1Turn = true;
     static boolean isGameOn = true;
     public static Board board = new Board();
+    public static Players players = new Players();
+
+    static final int ROWS = 6;
+    static final int COLS = 7;
     //testing out something different
     public static void makeMove() {
         Scanner scanner = new Scanner(System.in);
-        int ROWS = 6;
-        int COLS = 7;
-        Players players = new Players();
+
         while (isGameOn) {
             if (player1Turn == true) {
                 System.out.println(" ");
@@ -38,6 +40,9 @@ public class EventLoop
                     }
                 }
                 board.printBoard();
+                if (checkHorz() == true) {
+                    System.out.println("PLAYER1 IS A WINNER!");
+                }
             }
 
             if (player1Turn != true) {
@@ -63,8 +68,38 @@ public class EventLoop
                     }
                 }
                 board.printBoard();
-            }
+            }          
             makeMove();
         }
     }
+
+    public static boolean isWinner = false;
+    public static boolean checkHorz() { 
+        int count = 0;
+        for (String[] x : board.boardArray) {
+            for (int w = 0; w < COLS-1; w++) {
+                for (int i = 1; i < COLS; i++) {
+                    if (x[w].equals(x[i])) {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        if (count == 4) {
+            isWinner = true;
+            //System.out.println("PLAYER1 IS A WINNER!");
+            return isWinner;
+        } else {
+            return isWinner;
+        }    
+    }
+
+    //if (y == players.player1()) {
+    //  count++;
+    //}
+    //if (count == 4) {
+    //  isWinner = true;
+    //System.out.println("PLAYER1 IS A WINNER");
+    //}
 }
