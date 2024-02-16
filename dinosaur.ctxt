@@ -1,6 +1,0 @@
-#BlueJ class context
-comment0.target=dinosaur
-comment0.text=\r\n\ OLD\ EVENTLOOP\ THAT\ IS\ SUPER\ INEFFICIENT\r\n
-comment1.params=
-comment1.target=void\ runEventLoop()
-numComments=2

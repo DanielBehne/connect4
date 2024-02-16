@@ -4,11 +4,7 @@ public class EventLoop
 {
     static boolean player1Turn = true;
     static boolean isGameOn = true;
-    public static Board board = new Board();
-    public static Players players = new Players();
 
-    static final int ROWS = 6;
-    static final int COLS = 7;
     //testing out something different
     public static void makeMove() {
         Scanner scanner = new Scanner(System.in);
@@ -32,17 +28,18 @@ public class EventLoop
                 //}   
 
                 //still need if column is full
-                for (int i = ROWS - 1; i >= 0; i--) {
-                    if (board.boardArray[i][move].equals("-")) {
-                        board.boardArray[i][move] = players.player1();
+                for (int i = Constants1.ROWS - 1; i >= 0; i--) {
+                    if (Constants1.board.boardArray[i][move].equals("-")) {
+                        Constants1.board.boardArray[i][move] = Constants1.player1();
                         player1Turn = false;
                         break;
                     }
                 }
-                board.printBoard();
-                if (checkHorz() == true) {
+                if (State1.checkHorz() == true) {
                     System.out.println("PLAYER1 IS A WINNER!");
                 }
+                System.out.println();
+                Constants1.board.printBoard();
             }
 
             if (player1Turn != true) {
@@ -60,41 +57,22 @@ public class EventLoop
                 // break;
                 //}                
 
-                for (int i = ROWS - 1; i >= 0; i--) {
-                    if (board.boardArray[i][move].equals("-")) {
-                        board.boardArray[i][move] = players.player2();
+                for (int i = Constants1.ROWS - 1; i >= 0; i--) {
+                    if (Constants1.board.boardArray[i][move].equals("-")) {
+                        Constants1.board.boardArray[i][move] = Constants1.player2();
                         player1Turn = true;
                         break;
                     }
                 }
-                board.printBoard();
+                System.out.println();
+
+                Constants1.board.printBoard();
             }          
             makeMove();
         }
     }
 
-    public static boolean isWinner = false;
-    public static boolean checkHorz() { 
-        int count = 0;
-        for (String[] x : board.boardArray) {
-            for (int w = 0; w < COLS-1; w++) {
-                for (int i = 1; i < COLS; i++) {
-                    if (x[w].equals(x[i])) {
-                        count++;
-                    }
-                }
-            }
-        }
-
-        if (count == 4) {
-            isWinner = true;
-            //System.out.println("PLAYER1 IS A WINNER!");
-            return isWinner;
-        } else {
-            return isWinner;
-        }    
-    }
-
+    
     //if (y == players.player1()) {
     //  count++;
     //}
@@ -103,3 +81,4 @@ public class EventLoop
     //System.out.println("PLAYER1 IS A WINNER");
     //}
 }
+
