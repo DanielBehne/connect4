@@ -34,12 +34,15 @@ public class EventLoop
                         player1Turn = false;
                         break;
                     }
-                }
-                if (State1.checkHorz() == true) {
-                    System.out.println("PLAYER1 IS A WINNER!");
-                }
+                }            
                 System.out.println();
                 Constants1.board.printBoard();
+                if (State1.gameWon() == true) {
+                    isGameOn = false;
+                    System.out.println();
+                    System.out.println("PLAYER1 IS A WINNER!");
+                    break;
+                }
             }
 
             if (player1Turn != true) {
@@ -72,7 +75,6 @@ public class EventLoop
         }
     }
 
-    
     //if (y == players.player1()) {
     //  count++;
     //}

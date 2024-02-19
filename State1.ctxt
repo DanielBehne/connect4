@@ -2,4 +2,8 @@
 comment0.target=State1
 comment1.params=
 comment1.target=boolean\ checkHorz()
-numComments=2
+comment2.params=
+comment2.target=boolean\ checkVert()
+comment3.params=
+comment3.target=boolean\ gameWon()
+numComments=4
