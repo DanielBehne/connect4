@@ -30,9 +30,20 @@ public class State1
         }
         return false;
     }
+    
+    //bottom left to top right
+    public static boolean checkDiag1() {
+        for (int r = 5, c = 3; r >= 0 && c <= 6; c--, r++) {
+            if (Constants1.board.boardArray[r][c].equals(Constants1.player1())) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
 
     public static boolean gameWon() {
-        if (checkHorz() || checkVert()) {
+        if (checkHorz() || checkVert() || checkDiag1()) {
             return true;
         }
         return false;
