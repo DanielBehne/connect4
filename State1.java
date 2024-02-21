@@ -31,13 +31,33 @@ public class State1
         return false;
     }
     
-    //bottom left to top right
+    //top left to bottom right
     public static boolean checkDiag1() {
-        for (int r = 5, c = 3; r >= 0 && c <= 6; c--, r++) {
-            if (Constants1.board.boardArray[r][c].equals(Constants1.player1())) {
+        for (int i = 0; i <= Constants1.ROWS-4; i++) {
+            if (Constants1.board.boardArray[i][i].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+1][i+1].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+2][i+2].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+3][i+3].equals(Constants1.player1())) {
                 return true;
             }
         }
+        for (int i = 0; i <= Constants1.ROWS-4; i++) {
+            if (Constants1.board.boardArray[i][i+1].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+1][i+2].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+2][i+3].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+3][i+4].equals(Constants1.player1())) {
+                return true;
+            }
+        }
+        for (int i = 0; i <= Constants1.ROWS-4; i++) {
+            if (Constants1.board.boardArray[i][i+2].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+1][i+3].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+2][i+4].equals(Constants1.player1())
+            && Constants1.board.boardArray[i+3][i+5].equals(Constants1.player1())) {
+                return true;
+            }
+        }
+        
         return false;
     }
     

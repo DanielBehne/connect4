@@ -5,7 +5,6 @@ public class EventLoop
     static boolean player1Turn = true;
     static boolean isGameOn = true;
 
-    //testing out something different
     public static void makeMove() {
         Scanner scanner = new Scanner(System.in);
 
@@ -68,19 +67,17 @@ public class EventLoop
                     }
                 }
                 System.out.println();
-
                 Constants1.board.printBoard();
+                if (State2.gameWon() == true) {
+                    isGameOn = false;
+                    System.out.println();
+                    System.out.println("PLAYER2 IS A WINNER!");
+                    break;
+                }
             }          
             makeMove();
         }
     }
 
-    //if (y == players.player1()) {
-    //  count++;
-    //}
-    //if (count == 4) {
-    //  isWinner = true;
-    //System.out.println("PLAYER1 IS A WINNER");
-    //}
 }
 
