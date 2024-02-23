@@ -16,7 +16,6 @@ public class State1
         return false;
     }
 
-
     public static boolean checkVert() {
         for (int i = 0; i < Constants1.COLS; i++) {
             for (int j = 0; j <= Constants1.board.boardArray.length-4; j++) {
@@ -30,42 +29,74 @@ public class State1
         }
         return false;
     }
-    
+
     //top left to bottom right
     public static boolean checkDiag1() {
-        for (int i = 0; i <= Constants1.ROWS-4; i++) {
-            if (Constants1.board.boardArray[i][i].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+1][i+1].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+2][i+2].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+3][i+3].equals(Constants1.player1())) {
-                return true;
+        for (int row = 0; row <= 2; row++) {
+            for (int col = 1; col <= 3; col++) {
+                if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
+                    return true;
+                }
             }
         }
-        for (int i = 0; i <= Constants1.ROWS-4; i++) {
-            if (Constants1.board.boardArray[i][i+1].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+1][i+2].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+2][i+3].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+3][i+4].equals(Constants1.player1())) {
-                return true;
+        if (Constants1.board.boardArray[0][0].equals(Constants1.player1())
+        && Constants1.board.boardArray[1][1].equals(Constants1.player1())
+        && Constants1.board.boardArray[2][2].equals(Constants1.player1())
+        && Constants1.board.boardArray[3][3].equals(Constants1.player1())) {
+            return true;
+        }
+        for (int row = 1; row <= 2; row++) {
+            for (int col = 0; col <= 1; col++) {
+                if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
+                    return true;
+                }
             }
         }
-        for (int i = 0; i <= Constants1.ROWS-4; i++) {
-            if (Constants1.board.boardArray[i][i+2].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+1][i+3].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+2][i+4].equals(Constants1.player1())
-            && Constants1.board.boardArray[i+3][i+5].equals(Constants1.player1())) {
-                return true;
-            }
-        }
-        
         return false;
     }
     
+    //top right to bottom left
+    public static boolean checkDiag2() {
+        for (int row = 0; row <= 2; row++) {
+            for (int col = 1; col <= 3; col++) {
+                if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
+                    return true;
+                }
+            }
+        }
+        if (Constants1.board.boardArray[0][0].equals(Constants1.player1())
+        && Constants1.board.boardArray[1][1].equals(Constants1.player1())
+        && Constants1.board.boardArray[2][2].equals(Constants1.player1())
+        && Constants1.board.boardArray[3][3].equals(Constants1.player1())) {
+            return true;
+        }
+        for (int row = 1; row <= 2; row++) {
+            for (int col = 0; col <= 1; col++) {
+                if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public static boolean gameWon() {
-        if (checkHorz() || checkVert() || checkDiag1()) {
+        if (checkHorz() || checkVert() || checkDiag1() || checkDiag2()) {
             return true;
         }
         return false;
     }
 }
+
