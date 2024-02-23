@@ -33,7 +33,7 @@ public class State1
     //top left to bottom right
     public static boolean checkDiag1() {
         for (int row = 0; row <= 2; row++) {
-            for (int col = 1; col <= 3; col++) {
+            for (int col = 0; col <= 3; col++) {
                 if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
                 && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
                 && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
@@ -42,49 +42,18 @@ public class State1
                 }
             }
         }
-        if (Constants1.board.boardArray[0][0].equals(Constants1.player1())
-        && Constants1.board.boardArray[1][1].equals(Constants1.player1())
-        && Constants1.board.boardArray[2][2].equals(Constants1.player1())
-        && Constants1.board.boardArray[3][3].equals(Constants1.player1())) {
-            return true;
-        }
-        for (int row = 1; row <= 2; row++) {
-            for (int col = 0; col <= 1; col++) {
-                if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
-                    return true;
-                }
-            }
-        }
+        
         return false;
     }
-    
+
     //top right to bottom left
     public static boolean checkDiag2() {
         for (int row = 0; row <= 2; row++) {
-            for (int col = 1; col <= 3; col++) {
+            for (int col = 6; col >= 3; col--) {
                 if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
-                    return true;
-                }
-            }
-        }
-        if (Constants1.board.boardArray[0][0].equals(Constants1.player1())
-        && Constants1.board.boardArray[1][1].equals(Constants1.player1())
-        && Constants1.board.boardArray[2][2].equals(Constants1.player1())
-        && Constants1.board.boardArray[3][3].equals(Constants1.player1())) {
-            return true;
-        }
-        for (int row = 1; row <= 2; row++) {
-            for (int col = 0; col <= 1; col++) {
-                if (Constants1.board.boardArray[row][col].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+1][col+1].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+2][col+2].equals(Constants1.player1())
-                && Constants1.board.boardArray[row+3][col+3].equals(Constants1.player1())) {
+                && Constants1.board.boardArray[row+1][col-1].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+2][col-2].equals(Constants1.player1())
+                && Constants1.board.boardArray[row+3][col-3].equals(Constants1.player1())) {
                     return true;
                 }
             }
