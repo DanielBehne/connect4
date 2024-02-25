@@ -28,7 +28,7 @@ public class EventLoop
                         }   
 
                         for (int i = Constants1.ROWS - 1; i >= 0; i--) {
-                            if (Constants1.board.boardArray[i][moveCol].equals("-")) {
+                            if (Constants1.board.boardArray[i][moveCol].equals("-") && State1.gameWon() != true) {
                                 Constants1.board.boardArray[i][moveCol] = Constants1.player1();
                                 player1Turn = false;
                                 break;
@@ -75,7 +75,7 @@ public class EventLoop
                         }   
 
                         for (int i = Constants1.ROWS - 1; i >= 0; i--) {
-                            if (Constants1.board.boardArray[i][moveCol].equals("-")) {
+                            if (Constants1.board.boardArray[i][moveCol].equals("-") && State2.gameWon() != true) {
                                 Constants1.board.boardArray[i][moveCol] = Constants1.player2();
                                 player1Turn = true;
                                 break;
