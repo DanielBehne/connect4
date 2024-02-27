@@ -17,7 +17,7 @@ public class EventLoop
                     if (move.equalsIgnoreCase("exit")) {
                         isGameOn = false;
                         System.out.println("See ya next time!");
-                        break;
+                        System.exit(0);
                     } else {
                         int moveCol = Integer.parseInt(move);
                         if (moveCol > 6) {
@@ -28,7 +28,7 @@ public class EventLoop
                         }   
 
                         for (int i = Constants1.ROWS - 1; i >= 0; i--) {
-                            if (Constants1.board.boardArray[i][moveCol].equals("-") && State1.gameWon() != true) {
+                            if (Constants1.board.boardArray[i][moveCol].equals("-") && State1.gameWon() != true && isGameOn) {
                                 Constants1.board.boardArray[i][moveCol] = Constants1.player1();
                                 player1Turn = false;
                                 break;
@@ -75,7 +75,7 @@ public class EventLoop
                         }   
 
                         for (int i = Constants1.ROWS - 1; i >= 0; i--) {
-                            if (Constants1.board.boardArray[i][moveCol].equals("-") && State2.gameWon() != true) {
+                            if (Constants1.board.boardArray[i][moveCol].equals("-") && State2.gameWon() != true && isGameOn) {
                                 Constants1.board.boardArray[i][moveCol] = Constants1.player2();
                                 player1Turn = true;
                                 break;
